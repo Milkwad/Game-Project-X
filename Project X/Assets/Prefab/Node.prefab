@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33149770433678622}
   - component: {fileID: 23259416822436980}
   - component: {fileID: 65834262966722552}
-  - component: {fileID: 114047963942919310}
-  m_Layer: 10
+  - component: {fileID: 114077805933794062}
+  m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114047963942919310
+--- !u!114 &114077805933794062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
