@@ -10,9 +10,9 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
 
     public Transform SpawnPoint;
-    public Transform mobPrefab;
-    public List<Transform> MobList;
-    public int MobsToSpawn = 20;
+    public GameObject mobPrefab;
+    public List<GameObject> MobList;
+    public int MobsToSpawn;
 
     public static int MobsAlive = 0;
 
@@ -24,43 +24,39 @@ public class WaveSpawner : MonoBehaviour
     }
     void Update()
     {
-        //Debug.Log(MobsAlive);
-
-        if(MobsAlive <= 0)
+        if(MobsAlive > 0)
         {
-            TimeNextWave -= Time.deltaTime;
-            
-            waveCountdownText.text = Mathf.Floor(TimeNextWave).ToString();
+            waveCountdownText.GetComponent<Text>().enabled = false;
+            return;
+        }       
 
-        }
         if (TimeNextWave <= 1f)
         {
             SpawnWave();
             TimeNextWave = 11f;
         }
 
-       
-
-
+        TimeNextWave -= Time.deltaTime;
+        waveCountdownText.GetComponent<Text>().enabled = true;
+        waveCountdownText.text = Mathf.Floor(TimeNextWave).ToString();
 
     }
 
 
-
     void SpawnWave()
     {
-        MobList = new List<Transform>();
+        MobList = new List<GameObject>();
         for (int i = 0; i < MobsToSpawn; i++)
         {
             if (i < MobsToSpawn/2)
             {
-                Transform mob = (Transform)Instantiate(mobPrefab, SpawnPoint.position + new Vector3(1, 1, i), SpawnPoint.rotation);
+                GameObject mob = (GameObject)Instantiate(mobPrefab, SpawnPoint.position + new Vector3(1, 1, i), SpawnPoint.rotation);
                 mob.transform.parent = transform;
                 MobList.Add(mob);
             }
             else
             {
-                Transform mob = (Transform)Instantiate(mobPrefab, SpawnPoint.position + new Vector3(-1.0f, 1, i-10), SpawnPoint.rotation);
+                GameObject mob = (GameObject)Instantiate(mobPrefab, SpawnPoint.position + new Vector3(-1.0f, 1, i-MobsToSpawn/2), SpawnPoint.rotation);
                 mob.transform.parent = transform;
                 MobList.Add(mob);
                

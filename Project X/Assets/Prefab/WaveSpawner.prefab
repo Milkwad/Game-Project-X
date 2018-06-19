@@ -51,9 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fd3cc82447f9d438866d45c09a6163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeNextWave: 10
   waveCountdownText: {fileID: 0}
   SpawnPoint: {fileID: 4870275054980466}
-  mobPrefab: {fileID: 4844150714807418, guid: 6899c50cf146e0644af20950c9ac0a46, type: 2}
+  mobPrefab: {fileID: 1783235646569880, guid: 6899c50cf146e0644af20950c9ac0a46, type: 2}
   MobList: []
-  MobsToSpawn: 20
+  MobsToSpawn: 4

@@ -17,13 +17,13 @@ public class Enemy : MonoBehaviour {
 
      void Update()
     {
-      
+
+       
         if (this.gameObject.transform.position.x <= target.transform.position.x)
         {
 
             die();
         }
-       
        
         if (Mathf.Floor(wait) == 0f)
         {
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour {
 
     }
 
-    void die()
+    public void die()
     {
         WaveSpawner.MobsAlive--;
         Destroy(this.gameObject);
