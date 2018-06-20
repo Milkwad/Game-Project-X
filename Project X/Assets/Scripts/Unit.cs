@@ -73,6 +73,7 @@ public class Unit : MonoBehaviour {
     void Attack()
     {
         GameObject AttackProjectile = (GameObject)Instantiate(Projectile, AttackOrigin.position, AttackOrigin.rotation);
+        AttackProjectile.transform.SetParent(transform);
         MeleeAttack Attack = AttackProjectile.GetComponent<MeleeAttack>();
 
         if(Attack != null)

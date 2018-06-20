@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  Range: 2
-  Cooldown: 0.5
+  Range: 1
+  Cooldown: 2
   Projectile: {fileID: 1011245885426280, guid: 78dc1e26b81ce1f4bb4c0fa5fb06de8b, type: 2}
   AttackOrigin: {fileID: 4885831985659838}
